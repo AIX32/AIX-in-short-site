@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -11,102 +12,113 @@
       position: relative;
       height: 100vh;
       overflow: hidden;
-      background-image: url('https://i.imgur.com/DWkMO1w.gif'); /* Replace with your GIF URL */
+      background-image: url('https://i.imgur.com/DWkMO1w.gif');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* Optional, makes the background stay in place */
+      background-attachment: fixed;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0; /* Remove default body margin */
+      margin: 0;
     }
 
-    /* Blur the container with text */
     .content-container {
       backdrop-filter: blur(10px);
-      max-height: 90vh; /* Prevent content from overflowing off the page */
-      overflow-y: auto; /* Enable scrolling if content overflows */
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 16px;
+      animation: fadeIn 1s ease-in-out;
     }
-    
-    /* Custom Scrollbar Styles */
+
     ::-webkit-scrollbar {
-      width: 12px; /* Set the width of the scrollbar */
+      width: 10px;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.4); /* White thumb with transparency */
-      border-radius: 10px; /* Rounded corners */
-      backdrop-filter: blur(5px); /* Apply blur effect on the thumb */
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 10px;
     }
 
     ::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.2); /* Light white track */
-      border-radius: 10px; /* Rounded corners */
-      backdrop-filter: blur(5px); /* Apply blur effect on the track */
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
     }
 
-    /* Profile Image Styling */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .profile-image {
-      width: 150px;
-      height: 150px;
-      object-fit: cover; /* Ensures the image zooms in and keeps its aspect ratio */
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
       border-radius: 50%;
+      border: 3px dashed white;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transition-duration: 5s;
     }
     
-    
-
-    
-/* Keyframe animation to fill the button */
-@keyframes fillButton {
-  0% {
-    background-color: transparent;
-    color: white;
-  }
-  100% {
-    background-color: white;
-    color: #333; /* Text color on fill */
-  }
+    .profile-image:hover {
+  transform: rotate(-5deg);
 }
 
-/* Button Styling (Remove glow effect) */
-.button {
-  border: 2px solid white;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: none; /* Remove glow */
-  transition: all 0.7s ease;
-}
+    .button {
+      border: 2px solid white;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.5s ease;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-/* Hover effect with animation */
-.button:hover {
-  animation: fillButton 0.7s forwards; /* Apply the fill animation */
-}
+    .button:hover {
+      background-color: white;
+      color: black;
+    }
 
-.button .icon {
-  font-size: 1.25rem; /* Adjust icon size */
-  transition: all 0.2s ease;
-}
+    .button .icon {
+      font-size: 1.25rem;
+      transition: all 0.2s ease;
+    }
 
-.button:hover .icon {
-  transform: scale(1.2); /* Increase icon size on hover */
-}
+    .box {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 16px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.2s ease;
+    }
 
+    h1, h2 {
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+    }
   </style>
 </head>
 <body>
+  <!-- Hidden SoundCloud Player -->
+  <iframe 
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1989754967&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+    style="display:none;" 
+    allow="autoplay">
+  </iframe>
+
   <div class="content-container bg-white bg-opacity-20 rounded-lg shadow-lg p-8 max-w-6xl w-full">
     <div class="text-center mb-8">
-      <h1 class="text-5xl font-bold">
-        A_I_X
-      </h1>
-      <p class="text-xl italic">
-        "A Selfish Friend, But a Good One"
-      </p>
+      <h1 class="text-5xl font-bold">A_I_X</h1>
+      <p class="text-xl italic">"A Selfish Friend, But a Good One"</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="col-span-1 flex flex-col items-center">
@@ -120,44 +132,37 @@
             <i class="fas fa-user-friends icon"></i>
             <span>Friends...</span>
           </a>
-<a href="https://www.youtube.com/@A_I_X" class="button">
-  <i class="fab fa-youtube"></i>
-  <span>Youtube...</span>
-</a>
+          <a href="https://www.youtube.com/@A_I_X" class="button">
+            <i class="fab fa-youtube"></i>
+            <span>Youtube...</span>
+          </a>
         </div>
       </div>
       <div class="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md">
+        <div class="box">
           <h2 class="text-2xl font-semibold mb-4">Welcome</h2>
           <p>
-            Hey there, welcome! I'm excited to have you here. I'd describe myself as a bit of a complex person sure, I'm a little selfish, but I like to think I'm a nice guy at heart, always trying to help others when I can. I have a lot of interests and hobbies that keep me busy, so there's always something cool to talk about. And if you ask nicely, I'd be more than happy to lend a hand or give advice where I can! Looking forward to connecting!
+            Hey there, welcome! I'm excited to have you here. I'd describe myself as a bit of a complex person. Sure, I'm a little selfish, but I like to think I'm a nice guy at heart, always trying to help others when I can. 
           </p>
         </div>
-        <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md">
+        <div class="box">
           <h2 class="text-2xl font-semibold mb-4">I LOVE music</h2>
           <p>
-            I listen to all kinds of Music. My favorite artist has to be YonkaGor. Can't deny that his music probably played a role in making me a bit more selfish, but hey, it's all in good fun, right? I'm really into EDM. I also enjoy phonk now and then; the vibe is unique, which I love. And, believe it or not, I'll even put on some classics when the mood strikes me something timeless and calming. Music's a big part of my life.
-          </p>
-          <p class="mt-4">
-            Here's my playlist with all the songs I love:
+            I listen to all kinds of music. My favorite artist has to be YonkaGor. Can't deny that his music probably played a role in making me a bit more selfish, but hey, it's all in good fun, right? 
           </p>
           <a href="https://music.youtube.com/playlist?list=PLtqfWJpDmqUAGGMh0oI0mSKI0ajIUpvsD&si=tYgHtw3OmeoH_4wh" class="button mt-2">
             <i class="fas fa-play icon"></i>
             <span>Playlist</span>
           </a>
         </div>
-        <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md">
-          <h2 class="text-2xl font-semibold mb-4">My Interests/</h2>
+        <div class="box">
+          <h2 class="text-2xl font-semibold mb-4">My Interests</h2>
           <p>
-            I'm part of a lot of communities, and my main one is definitely the Blox'd community. Sure, maybe some people there are a bit wild or out there, but there are honestly some really good folks in it too. I've also got an appreciation for the furry community nothing too intense, just a casual interest. As for coding, I wouldn't say it's exactly "fun," but I love creating things, so I've picked it up and learned quite a bit. It's more about the satisfaction of building something from scratch and seeing it come to life.
+            I'm part of a lot of communities, and my main one is definitely the Blox'd community. Sure, maybe some people there are a bit wild or out there, but there are honestly some really good folks in it too.
           </p>
-          <a href="https://bloxd.io" class="button mt-4">
-            <i class="fas fa-info-circle icon"></i>
-            <span>bloxd.io?</span>
-          </a>
         </div>
-        <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-md">
-          <h2 class="text-2xl font-semibold mb-4">Bad stuff~</h2>
+        <div class="box">
+          <h2 class="text-2xl font-semibold mb-4">Bad Stuff~</h2>
           <p>
             I might be a bit suicidal, but I'm really trying my best to stay positive. Having you here for me means a lot, and what you say is important to me. Your support truly makes a difference.
           </p>
