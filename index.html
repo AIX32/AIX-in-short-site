@@ -13,14 +13,21 @@
       position: relative;
       height: 100vh;
       overflow: hidden;
-      background-image: url('https://i.imgur.com/DWkMO1w.gif'); /* Replace with your GIF URL */
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0;
+    }
+
+    /* Video background styling */
+    video.background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     .content-container {
@@ -69,8 +76,8 @@
     }
     
     .profile-image:hover {
-  transform: rotate(-5deg); /* Tilt slightly to the left */
-}
+      transform: rotate(-5deg); /* Tilt slightly to the left */
+    }
 
     .button {
       border: 2px solid white;
@@ -116,6 +123,12 @@
     allow="autoplay">
   </iframe>
 
+  <!-- Video Background -->
+  <video autoplay loop muted class="background-video">
+    <source src="https://cdn.discordapp.com/attachments/804347688946237475/1319677980275904563/Blue_Archive_Tittle_screen_BGM._Mitsukiyo_-_Constant_Moderato.mp4?ex=6766d564&is=676583e4&hm=842e1acccff931a25840d0d8b0336f594a619d5aa00659b581020949ca9d5d7d&" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <div class="content-container bg-white bg-opacity-20 rounded-lg shadow-lg p-8 max-w-6xl w-full">
     <div class="text-center mb-8">
       <h1 class="text-5xl font-bold">A_I_X</h1>
@@ -159,7 +172,7 @@
         <div class="box">
           <h2 class="text-2xl font-semibold mb-4">My Interests</h2>
           <p>
-            I'm part of a lot of communities, and my main one is definitely the Blox'd community. Sure, maybe some people there are a bit wild or out there, but there are honestly some really good folks in it too.
+            I'm part of a lot of communities, and my main one is definitely the Bloxd community. Sure, maybe some people there are a bit wild or out there, but there are honestly some really good folks in it too.
           </p>
         </div>
         <div class="box">
